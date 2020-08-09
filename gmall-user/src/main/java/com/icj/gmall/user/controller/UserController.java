@@ -1,12 +1,10 @@
 package com.icj.gmall.user.controller;
 
-import com.icj.gmall.user.bean.UmsMember;
-import com.icj.gmall.user.bean.UmsMemberReceiveAddress;
-import com.icj.gmall.user.service.UserService;
-import org.apache.ibatis.annotations.Param;
+import com.icj.gmall.bean.UmsMember;
+import com.icj.gmall.bean.UmsMemberReceiveAddress;
+import com.icj.gmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -20,7 +18,7 @@ public class UserController {
 
     @RequestMapping("getReceiveAddressByMemberId")
     @ResponseBody
-    public List<UmsMemberReceiveAddress> getReceiveAddressByMemberId( String memberId) {
+    public List<UmsMemberReceiveAddress> getReceiveAddressByMemberId(String memberId) {
         List<UmsMemberReceiveAddress> umsMemberReceiveAddresses =
                 userService.getReceiveAddressByMemberId(memberId);
         return umsMemberReceiveAddresses;
@@ -29,7 +27,7 @@ public class UserController {
     @RequestMapping("getAllUser")
     @ResponseBody
     public List<UmsMember> getAllUser() {
-       List<UmsMember> umsMembers= userService.getAllUser();
+        List<UmsMember> umsMembers = userService.getAllUser();
         return umsMembers;
     }
 
